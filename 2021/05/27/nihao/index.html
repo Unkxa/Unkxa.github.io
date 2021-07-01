@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="img/logo.png"/>
+	<link rel="shortcut icon" href="img/logo.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="unkxa" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg2.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">UnkXa</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/frontend/" title="前端">
+		                前端
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/game/" title="游戏">
+		                游戏
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="/%5Bobject%20Object%5D" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://www.linuxeden.com/wp-content/uploads/2017/07/bgnu6ymb2jmqy5o01200.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Primise 用法</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>#Primise用法</p>
+<h2 id="1-异步"><a href="#1-异步" class="headerlink" title="1.异步"></a>1.异步</h2><p>同步代码是自上到下逐条调用的<br>异步代码会跳出 不阻塞 同步代码。一般请求 settimeout 会用到。</p>
+<h3 id="1-1-不用primise-的异步函数方法"><a href="#1-1-不用primise-的异步函数方法" class="headerlink" title="1-1.不用primise 的异步函数方法"></a>1-1.不用primise 的异步函数方法</h3><p>看起来很正常也蛮普通的异步操作如下<br>一般的需要用到异步操作的地方是向服务器发送请求。<br>所以你还需要一个 失败处理的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//异步后需要执行的代码</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">`我是<span class="subst">$&#123;val&#125;</span>`</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">//异步执行出错时显示的代码</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">errFun</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">`失败了 传入数据为 <span class="subst">$&#123;val&#125;</span>`</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">//异步函数</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">val, fun, errFun</span>) </span>&#123;</span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">         <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">typeof</span> val !== <span class="string">&#x27;number&#x27;</span>) &#123;</span><br><span class="line">             <span class="keyword">throw</span> <span class="string">&quot;您传入的应是数值&quot;</span>;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           fun(val);</span><br><span class="line">         &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">           errFun(e);</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;, <span class="number">1000</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     log(<span class="number">1</span>, fun, errFun);</span><br></pre></td></tr></table></figure>
+<p>这样的函数如果需要函数内再次嵌套异步操作就会 非常麻烦<br>所以被称为<strong>回调地狱</strong><br>ps: 这里应该有一个回调地狱的代码块..但是实在有点麻烦了就算了</p>
+<p>这样的代码不要说维护，就连写起来都感觉非常困难。</p>
+<h3 id="2-Primise"><a href="#2-Primise" class="headerlink" title="2.Primise"></a>2.Primise</h3><p>所以 Primise 是一个官方的构造函数（大概，有可能不是这个意思）</p>
+<p>所以你需要new Primise 才能生成 一个实例化对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">      <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// ... some code</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (<span class="comment">/* 异步操作成功 */</span>) &#123;</span><br><span class="line">        resolve(value);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>他会有一个标识符<br>用来显示三种状态<br> pending   fulfilled   rejected<br>（待定， 兑现， 拒绝）<br>*不用背这几个单词啦 因为考试不考 而且。。</p>
+<p>这个状态是私有的 不能直接用 js来检测到  （是为了防止js读取到了状态的值 从而用同步方式来处理这个对象）且这个状态不能修改</p>
+<p>Promise 需要传入两个 函数  <strong>resolve</strong> 和 <strong>reject</strong><br>分别用来处理 成功 和 失败 情况 调用resolve会把状态设置成 兑现  同理 reject会把状态设置成拒绝</p>
+<p>你可以添加 setTimeout 来进行 延迟转换 但无论那个被调用后状态就不能再转换了 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">setTimeout</span>(resolve,<span class="number">10000</span>);</span><br><span class="line">        <span class="comment">//10秒后调用 resolve</span></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>你也可以添加 setTimeout 让你的异步函数 不会卡在 pending状态 例如10秒后变为失败</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">setTimeout</span>(reject,<span class="number">10000</span>);</span><br><span class="line">        <span class="comment">//10秒后调用 reject</span></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-then"><a href="#3-then" class="headerlink" title="3.then"></a>3.then</h3><p>then里一般传递的值是两个 函数 第一个函数 会返回 当Promise的状态为 resolve 时所调用的函数</p>
+<p>第二个函数 就是 当状态变为 reject时所调用的函数</p>
+<p>你可以在then里写你希望调用的函数</p>
+<hr>
+<p>小tips：<br>我一般写then的时候只会传入一个值（忽略reject的情况） 但是，我在测试只传一个值的时候系统报错了<br>但报错并没有影后续代码的执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(reject,<span class="number">1000</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  p.then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(res);&#125;); <span class="comment">//Uncaught (in promise) undefined(报错信息)</span></span><br><span class="line">  p.catch(<span class="function">()=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">&#x27;失败&#x27;</span>);<span class="built_in">console</span>.log(p);&#125;) <span class="comment">//失败</span></span><br><span class="line">  <span class="built_in">console</span>.log(p);<span class="comment">// Promise &#123;&lt;pending&gt;&#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="4-catch"><a href="#4-catch" class="headerlink" title="4.catch"></a>4.catch</h3><p>catch 就是 相当于 then里 前一个函数为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.then(<span class="function">()=&gt;</span><span class="literal">null</span>,<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(res);&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-finally"><a href="#5-finally" class="headerlink" title="5.finally"></a>5.finally</h3><p> finally 就是 无论成功与否都会调用<br> 主要用于清理代码 注意 他与promise 的状态无关 </p>
+<p> 但是如果是 reject 的状态的话 他仍然会报错</p>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(reject,<span class="number">1000</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  p.finally(<span class="function">()=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">&#x27;无论成功与否都调用&#x27;</span>);&#125;)</span><br><span class="line">  <span class="comment">// 无论成功与否都调用</span></span><br><span class="line">   <span class="comment">//Uncaught (in promise) undefined</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2021/05/27/nihao/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2021/05/27/nihao/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
