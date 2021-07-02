@@ -144,7 +144,7 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://www.linuxeden.com/wp-content/uploads/2017/07/bgnu6ymb2jmqy5o01200.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Primise 用法</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Primise 用法(待补全)</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
@@ -165,20 +165,20 @@
 <p>你也可以添加 setTimeout 让你的异步函数 不会卡在 pending状态 例如10秒后变为失败</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">setTimeout</span>(reject,<span class="number">10000</span>);</span><br><span class="line">        <span class="comment">//10秒后调用 reject</span></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-then"><a href="#3-then" class="headerlink" title="3.then"></a>3.then</h3><p>then里一般传递的值是两个 函数 第一个函数 会返回 当Promise的状态为 resolve 时所调用的函数</p>
+<h4 id="2-1-then"><a href="#2-1-then" class="headerlink" title="2-1.then"></a>2-1.then</h4><p>then里一般传递的值是两个 函数 第一个函数 会返回 当Promise的状态为 resolve 时所调用的函数</p>
 <p>第二个函数 就是 当状态变为 reject时所调用的函数</p>
 <p>你可以在then里写你希望调用的函数</p>
 <hr>
 <p>小tips：<br>我一般写then的时候只会传入一个值（忽略reject的情况） 但是，我在测试只传一个值的时候系统报错了<br>但报错并没有影后续代码的执行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(reject,<span class="number">1000</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  p.then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(res);&#125;); <span class="comment">//Uncaught (in promise) undefined(报错信息)</span></span><br><span class="line">  p.catch(<span class="function">()=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">&#x27;失败&#x27;</span>);<span class="built_in">console</span>.log(p);&#125;) <span class="comment">//失败</span></span><br><span class="line">  <span class="built_in">console</span>.log(p);<span class="comment">// Promise &#123;&lt;pending&gt;&#125;</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="4-catch"><a href="#4-catch" class="headerlink" title="4.catch"></a>4.catch</h3><p>catch 就是 相当于 then里 前一个函数为</p>
+<h4 id="2-2-catch"><a href="#2-2-catch" class="headerlink" title="2-2.catch"></a>2-2.catch</h4><p>catch 就是 相当于 then里 前一个函数为</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.then(<span class="function">()=&gt;</span><span class="literal">null</span>,<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(res);&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="5-finally"><a href="#5-finally" class="headerlink" title="5.finally"></a>5.finally</h3><p> finally 就是 无论成功与否都会调用<br> 主要用于清理代码 注意 他与promise 的状态无关 </p>
+<h4 id="2-3-finally"><a href="#2-3-finally" class="headerlink" title="2-3.finally"></a>2-3.finally</h4><p> finally 就是 无论成功与否都会调用<br> 主要用于清理代码 注意 他与promise 的状态无关 </p>
 <p> 但是如果是 reject 的状态的话 他仍然会报错</p>
 <pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(reject,<span class="number">1000</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  p.finally(<span class="function">()=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">&#x27;无论成功与否都调用&#x27;</span>);&#125;)</span><br><span class="line">  <span class="comment">// 无论成功与否都调用</span></span><br><span class="line">   <span class="comment">//Uncaught (in promise) undefined</span></span><br></pre></td></tr></table></figure>
 </code></pre>
-
+<h3 id="3-all-race"><a href="#3-all-race" class="headerlink" title="3.all race"></a>3.all race</h3><h3 id="4-async-await"><a href="#4-async-await" class="headerlink" title="4.async/await"></a>4.async/await</h3>
             </div>
 
             <!-- Post Comments -->
@@ -240,8 +240,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://example.com/2021/05/27/nihao/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2021/05/27/nihao/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://example.com/2021/05/27/Primise/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2021/05/27/Primise/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
